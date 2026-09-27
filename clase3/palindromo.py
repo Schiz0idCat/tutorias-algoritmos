@@ -5,7 +5,7 @@
 #   - Se tiene que usar slicing
 
 def es_palindromo(s: str) -> bool:
-    pass
+    return s[::-1].lower() == s.lower()
 
 
 if __name__ == "__main__":

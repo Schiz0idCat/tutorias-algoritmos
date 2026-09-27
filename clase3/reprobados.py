@@ -8,23 +8,40 @@
 # Versión paso a paso
 def promedio(numeros):
     """Recibe una lista de números y retorna el promedio"""
-    pass
+    return sum(numeros)/len(numeros)
 
 
 def procesar_promedios(col_notas):
     """Recibe una matriz de notas y retorna una lista de promedios"""
-    pass
-
+    promediostotal = []
+    for notas in col_notas:
+        acprom = promedio(notas)
+        promediostotal.append(acprom)
+    return promediostotal
 
 def procesar_situacion(promedios, minimo = 4):
     """Recibe una lista de promedios y retorna una lista de booleanos
     indicando los índices aprobados/reprobados"""
-    pass
+    situaciones = []
+    for prom in promedios:
+        if prom > minimo:
+            situaciones.append(True)
+        else:
+            situaciones.append(False)
+    return situaciones
 
 def resumen(alumnos, notas, promedios, situaciones):
     """Muestra por consola toda la información relacionada al grupo de estudiantes.
     su índice, el nombre, sus notas, su promedio y si está aprobado o reprobado"""
-    pass
+    for inf in range(len(alumnos)):
+        print(f"Alumno: {alumnos[inf]}")
+        print(f"Notas {notas[inf]}")
+        print(f"Promedio: {promedios[inf]}")
+        if situaciones[inf]:
+            print("Aprobado")
+        else:
+            print("Reprobado")
+        print()
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ s: str = "python"
 k: int = 3
 
 def invertir(s: str, k: int):
-    pass
+    return s[:k][::-1] + s[k:]
 
 if __name__ == "__main__":
     print(f"str: {s}")
